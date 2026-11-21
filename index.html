@@ -5,169 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aqyrix Apps</title>
   <meta name="description" content="Taqweem, Nudge, and Oralis on the App Store and Google Play.">
-  <style>
-    :root {
-      --ink: #1a1814;
-      --muted: #6d675f;
-      --line: #e4dfd6;
-      --paper: #f6f3ee;
-      --card: #fffdf9;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      color: var(--ink);
-      background:
-        radial-gradient(1200px 500px at 50% -120px, #fff 0%, transparent 70%),
-        var(--paper);
-      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-    }
-
-    main {
-      width: min(980px, calc(100% - 40px));
-      margin: 0 auto;
-      padding: 72px 0 80px;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 56px;
-    }
-
-    header p {
-      margin: 0 0 8px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 12px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    h1 {
-      margin: 0;
-      font-weight: 500;
-      font-size: clamp(40px, 6vw, 64px);
-      letter-spacing: -0.03em;
-    }
-
-    .apps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    article {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 36px 20px 28px;
-      text-align: center;
-      box-shadow: 0 18px 40px rgba(60, 42, 20, 0.05);
-    }
-
-    .icon {
-      width: 132px;
-      height: 132px;
-      border-radius: 30px;
-      object-fit: cover;
-      box-shadow: 0 10px 24px rgba(40, 28, 12, 0.14);
-    }
-
-    h2 {
-      margin: 22px 0 0;
-      font-size: 28px;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-    }
-
-    .blurb {
-      margin: 8px auto 0;
-      max-width: 220px;
-      min-height: 2.8em;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 14px;
-      line-height: 1.45;
-      color: var(--muted);
-    }
-
-    .stores {
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      margin-top: 26px;
-      padding-top: 22px;
-      border-top: 1px solid var(--line);
-    }
-
-    .store {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      width: 92px;
-      color: var(--ink);
-      text-decoration: none;
-    }
-
-    .store svg {
-      width: 34px;
-      height: 34px;
-    }
-
-    .store span {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 13px;
-      line-height: 1.2;
-    }
-
-    .store:hover span,
-    .store:focus-visible span {
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .store:focus-visible {
-      outline: 2px solid var(--ink);
-      outline-offset: 6px;
-      border-radius: 12px;
-    }
-
-    footer {
-      margin-top: 40px;
-      text-align: center;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    @media (max-width: 760px) {
-      main { padding-top: 48px; }
-      .apps { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
-      .blurb { min-height: 0; }
-    }
-  </style>
+  <link rel="stylesheet" href="site.css">
 </head>
-<body>
+<body data-page="home">
   <main>
     <header>
       <p>Aqyrix</p>
-      <h1>Apps</h1>
+      <h1 data-i18n="title">Apps</h1>
     </header>
 
     <section class="apps">
       <article>
-        <img class="icon" src="icons/taqweem.png" width="132" height="132" alt="Taqweem">
-        <h2>Taqweem</h2>
-        <p class="blurb">Prayer times, Hijri calendar, and Qibla.</p>
+        <a class="app-link" href="taqweem/">
+          <img class="icon" src="icons/taqweem.png" width="132" height="132" alt="">
+          <h2>Taqweem</h2>
+        </a>
+        <p class="blurb" data-i18n="taqweem">Prayer times, Hijri calendar, and Qibla.</p>
         <div class="stores">
           <a class="store" href="https://apps.apple.com/app/taqweem-aqyrix/id6780969293">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path fill="currentColor" d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
             </svg>
-            <span>App Store</span>
+            <span data-i18n="store.apple">App Store</span>
           </a>
           <a class="store" href="https://play.google.com/store/apps/details?id=com.aqyrix.taqweem">
             <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -176,21 +35,23 @@
               <path fill="#EA4335" d="M16.4 15.5l-3.9-3.8L1.1 23.1c.4.4 1.1.5 1.8.1l13.5-7.7z"/>
               <path fill="#34A853" d="M16.4 8.5 2.9 1c-.7-.4-1.4-.3-1.8.1l11.4 11.4 3.9-4z"/>
             </svg>
-            <span>Google Play</span>
+            <span data-i18n="store.google">Google Play</span>
           </a>
         </div>
       </article>
 
       <article>
-        <img class="icon" src="icons/nudge.png" width="132" height="132" alt="Nudge">
-        <h2>Nudge</h2>
-        <p class="blurb">Say a reminder. It rings when it should.</p>
+        <a class="app-link" href="nudge/">
+          <img class="icon" src="icons/nudge.png" width="132" height="132" alt="">
+          <h2>Nudge</h2>
+        </a>
+        <p class="blurb" data-i18n="nudge">Say a reminder. It rings when it should.</p>
         <div class="stores">
           <a class="store" href="https://apps.apple.com/app/nudge-aqyrix/id6821539760">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path fill="currentColor" d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
             </svg>
-            <span>App Store</span>
+            <span data-i18n="store.apple">App Store</span>
           </a>
           <a class="store" href="https://play.google.com/store/apps/details?id=com.aqyrix.nudge">
             <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -199,21 +60,23 @@
               <path fill="#EA4335" d="M16.4 15.5l-3.9-3.8L1.1 23.1c.4.4 1.1.5 1.8.1l13.5-7.7z"/>
               <path fill="#34A853" d="M16.4 8.5 2.9 1c-.7-.4-1.4-.3-1.8.1l11.4 11.4 3.9-4z"/>
             </svg>
-            <span>Google Play</span>
+            <span data-i18n="store.google">Google Play</span>
           </a>
         </div>
       </article>
 
       <article>
-        <img class="icon" src="icons/oralis.png" width="132" height="132" alt="Oralis">
-        <h2>Oralis</h2>
-        <p class="blurb">Turn a how-to conversation into a guide.</p>
+        <a class="app-link" href="oralis/">
+          <img class="icon" src="icons/oralis.png" width="132" height="132" alt="">
+          <h2>Oralis</h2>
+        </a>
+        <p class="blurb" data-i18n="oralis">Turn a how-to conversation into a guide.</p>
         <div class="stores">
           <a class="store" href="https://apps.apple.com/app/oralis-aqyrix/id6822753551">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path fill="currentColor" d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
             </svg>
-            <span>App Store</span>
+            <span data-i18n="store.apple">App Store</span>
           </a>
           <a class="store" href="https://play.google.com/store/apps/details?id=com.aqyrix.oralis">
             <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -222,7 +85,7 @@
               <path fill="#EA4335" d="M16.4 15.5l-3.9-3.8L1.1 23.1c.4.4 1.1.5 1.8.1l13.5-7.7z"/>
               <path fill="#34A853" d="M16.4 8.5 2.9 1c-.7-.4-1.4-.3-1.8.1l11.4 11.4 3.9-4z"/>
             </svg>
-            <span>Google Play</span>
+            <span data-i18n="store.google">Google Play</span>
           </a>
         </div>
       </article>
@@ -230,5 +93,7 @@
 
     <footer>Aqyrix</footer>
   </main>
+  <script src="site.js"></script>
+  <script>Aqyrix.applyLanguage();</script>
 </body>
 </html>
